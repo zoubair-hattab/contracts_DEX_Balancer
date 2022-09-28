@@ -4,7 +4,7 @@ pragma solidity ^0.7.0;
 
 import "./BalancerErrors.sol";
 
-import "..interfaces/IERC20.sol";
+import "../interfaces/IERC20.sol";
 
 /**
  * @title SafeERC20
