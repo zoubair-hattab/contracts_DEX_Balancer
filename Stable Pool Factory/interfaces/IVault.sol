@@ -1,19 +1,28 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma experimental ABIEncoderV2;
 
 import "./IERC20.sol";
-
+import "./ISignaturesValidator.sol";
+import "./ITemporarilyPausable.sol";
 import "./IWETH.sol";
+
 import "./IAsset.sol";
 import "./IAuthorizer.sol";
 import "./IFlashLoanRecipient.sol";
-import "../contract/ProtocolFeesCollector.sol";
-
-import "../interfaces/ISignaturesValidator.sol";
-import "../interfaces/ITemporarilyPausable.sol";
-
+import "./IProtocolFeesCollector.sol";
 
 pragma solidity ^0.7.0;
 
@@ -735,7 +744,7 @@ interface IVault is ISignaturesValidator, ITemporarilyPausable {
     /**
      * @dev Returns the current protocol fee module.
      */
-    function getProtocolFeesCollector() external view returns (ProtocolFeesCollector);
+    function getProtocolFeesCollector() external view returns (IProtocolFeesCollector);
 
     /**
      * @dev Safety mechanism to pause most Vault operations in the event of an emergency - typically detection of an

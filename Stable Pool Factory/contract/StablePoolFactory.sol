@@ -17,7 +17,6 @@ pragma experimental ABIEncoderV2;
 
 import "../interfaces/IVault.sol";
 
-
 import "./BasePoolFactory.sol";
 import "./FactoryWidePauseWindow.sol";
 

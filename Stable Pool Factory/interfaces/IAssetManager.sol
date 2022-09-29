@@ -15,7 +15,7 @@
 pragma solidity ^0.7.0;
 pragma experimental ABIEncoderV2;
 
-import "./IERC20.sol";
+import "../interfaces/IERC20.sol";
 
 interface IAssetManager {
     /**
@@ -27,11 +27,6 @@ interface IAssetManager {
      * @notice Sets the config
      */
     function setConfig(bytes32 poolId, bytes calldata config) external;
-
-    /**
-     * Note: No function to read the asset manager config is included in IAssetManager
-     * as the signature is expected to vary between asset manager implementations
-     */
 
     /**
      * @notice Returns the asset manager's token
@@ -71,11 +66,4 @@ interface IAssetManager {
      * @param force - a boolean representing whether a rebalance should be forced even when the pool is near balance
      */
     function rebalance(bytes32 poolId, bool force) external;
-
-    /**
-     * @notice allows an authorized rebalancer to remove capital to facilitate large withdrawals
-     * @param poolId - the poolId of the pool to withdraw funds back to
-     * @param amount - the amount of tokens to withdraw back to the pool
-     */
-    function capitalOut(bytes32 poolId, uint256 amount) external;
 }

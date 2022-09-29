@@ -1,12 +1,20 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.7.0;
 
-
-
 import "./Math.sol";
-
 import "./FixedPoint.sol";
 
 // This is a contract to emulate file-level functions. Convert to a library
@@ -70,8 +78,9 @@ contract StableMath {
         for (uint256 i = 0; i < 255; i++) {
             uint256 P_D = balances[0] * numTokens;
             for (uint256 j = 1; j < numTokens; j++) {
-                P_D =Math.div(Math.mul(Math.mul(P_D, balances[j]), numTokens), invariant, roundUp);
+                P_D = Math.div(Math.mul(Math.mul(P_D, balances[j]), numTokens), invariant, roundUp);
             }
+       
             prevInvariant = invariant;
             invariant = Math.div(
                 Math.mul(Math.mul(numTokens, invariant), invariant).add(
@@ -92,7 +101,6 @@ contract StableMath {
                 return invariant;
             }
         }
-        
 
         _revert(Errors.STABLE_GET_BALANCE_DIDNT_CONVERGE);
     }

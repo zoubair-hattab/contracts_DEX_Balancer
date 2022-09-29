@@ -19,13 +19,11 @@ pragma experimental ABIEncoderV2;
 import "./FixedPoint.sol";
 import "../interfaces/InputHelpers.sol";
 import "./WordCodec.sol";
-
 import "./BaseGeneralPool.sol";
 import "./BaseMinimalSwapInfoPool.sol";
 
 import "./StableMath.sol";
 import "./StablePoolUserDataHelpers.sol";
-
 contract StablePool is BaseGeneralPool, BaseMinimalSwapInfoPool, StableMath {
     using FixedPoint for uint256;
     using StablePoolUserDataHelpers for bytes;
@@ -316,6 +314,7 @@ contract StablePool is BaseGeneralPool, BaseMinimalSwapInfoPool, StableMath {
 
         return (bptAmountOut, amountsIn);
     }
+    
 
     // Exit
 

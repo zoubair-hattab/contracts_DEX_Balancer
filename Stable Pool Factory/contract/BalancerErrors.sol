@@ -1,4 +1,17 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 pragma solidity ^0.7.0;
 
 // solhint-disable
@@ -98,6 +111,7 @@ library Errors {
     uint256 internal constant BPT_IN_MAX_AMOUNT = 207;
     uint256 internal constant BPT_OUT_MIN_AMOUNT = 208;
     uint256 internal constant EXPIRED_PERMIT = 209;
+    uint256 internal constant NOT_TWO_TOKENS = 210;
 
     // Pools
     uint256 internal constant MIN_AMP = 300;
@@ -112,6 +126,20 @@ library Errors {
     uint256 internal constant INVALID_TOKEN = 309;
     uint256 internal constant UNHANDLED_JOIN_KIND = 310;
     uint256 internal constant ZERO_INVARIANT = 311;
+    uint256 internal constant ORACLE_INVALID_SECONDS_QUERY = 312;
+    uint256 internal constant ORACLE_NOT_INITIALIZED = 313;
+    uint256 internal constant ORACLE_QUERY_TOO_OLD = 314;
+    uint256 internal constant ORACLE_INVALID_INDEX = 315;
+    uint256 internal constant ORACLE_BAD_SECS = 316;
+    uint256 internal constant AMP_END_TIME_TOO_CLOSE = 317;
+    uint256 internal constant AMP_ONGOING_UPDATE = 318;
+    uint256 internal constant AMP_RATE_TOO_HIGH = 319;
+    uint256 internal constant AMP_NO_ONGOING_UPDATE = 320;
+    uint256 internal constant STABLE_INVARIANT_DIDNT_CONVERGE = 321;
+    uint256 internal constant STABLE_GET_BALANCE_DIDNT_CONVERGE = 322;
+    uint256 internal constant RELAYER_NOT_CONTRACT = 323;
+    uint256 internal constant BASE_POOL_RELAYER_NOT_CALLED = 324;
+    uint256 internal constant REBALANCING_RELAYER_REENTERED = 325;
 
     // Lib
     uint256 internal constant REENTRANCY = 400;
@@ -140,6 +168,9 @@ library Errors {
     uint256 internal constant REVOKE_SENDER_NOT_ADMIN = 423;
     uint256 internal constant RENOUNCE_SENDER_NOT_ALLOWED = 424;
     uint256 internal constant BUFFER_PERIOD_EXPIRED = 425;
+    uint256 internal constant CALLER_IS_NOT_OWNER = 426;
+    uint256 internal constant NEW_OWNER_IS_ZERO = 427;
+    uint256 internal constant CODE_DEPLOYMENT_FAILED = 428;
 
     // Vault
     uint256 internal constant INVALID_POOL_ID = 500;
