@@ -14,10 +14,10 @@
 
 pragma solidity ^0.7.0;
 
-import "../Math.sol";
+import "./Math.sol";
 import "../interfaces/IERC20.sol";
 import "../interfaces/IERC20Permit.sol";
-import "../interfaces/EIP712.sol";
+import "./EIP712.sol";
 
 /**
  * @title Highly opinionated token implementation
