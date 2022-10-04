@@ -16,7 +16,7 @@ pragma solidity ^0.7.0;
 
 import "./IERC20.sol";
 
-import "./BalancerErrors.sol";
+import "../Contract/BalancerErrors.sol";
 
 import "./IAsset.sol";
 
