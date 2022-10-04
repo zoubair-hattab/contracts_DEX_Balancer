@@ -20,6 +20,7 @@ import "./IERC20.sol";
 import "./ILiquidityGauge.sol";
 import "./IRewardTokenDistributor.sol";
 
+
 // For compatibility, we're keeping the same function names as in the original Curve code, including the mixed-case
 // naming convention.
 // solhint-disable func-name-mixedcase, var-name-mixedcase

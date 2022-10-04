@@ -19,7 +19,7 @@ import "../interfaces/IBalancerRelayer.sol";
 import "../interfaces/IVault.sol";
 
 import "../interfaces/IBaseRelayerLibrary.sol";
-import "../interfaces/BalancerRelayer.sol";
+import "./BalancerRelayer.sol";
 
 /**
  * @title Base Relayer Library

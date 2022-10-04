@@ -9,6 +9,7 @@ pragma solidity ^0.7.0;
 import "./BalancerErrors.sol";
 
 /**
+
  * @dev Contract module that helps prevent reentrant calls to a function.
  *
  * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier

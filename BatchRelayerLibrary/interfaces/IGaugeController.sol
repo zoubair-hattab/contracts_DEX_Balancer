@@ -19,6 +19,7 @@ import "./IERC20.sol";
 import "./IAuthorizerAdaptor.sol";
 import "./IVotingEscrow.sol";
 
+
 // For compatibility, we're keeping the same function names as in the original Curve code, including the mixed-case
 // naming convention.
 // solhint-disable func-name-mixedcase

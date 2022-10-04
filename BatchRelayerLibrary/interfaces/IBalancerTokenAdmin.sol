@@ -18,6 +18,7 @@ import "./IAuthentication.sol";
 
 import "./IBalancerToken.sol";
 
+
 interface IBalancerTokenAdmin is IAuthentication {
     // solhint-disable func-name-mixedcase
     function INITIAL_RATE() external view returns (uint256);

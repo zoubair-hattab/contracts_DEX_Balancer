@@ -19,7 +19,7 @@ import "../interfaces/IVault.sol";
 import "./WeightedPoolUserData.sol";
 
 import "../interfaces/InputHelpers.sol";
-import "../interfaces/VaultHelpers.sol";
+import "./VaultHelpers.sol";
 import "./Math.sol";
 
 import "../interfaces/IBaseRelayerLibrary.sol";
