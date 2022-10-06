@@ -14,14 +14,15 @@
 
 pragma experimental ABIEncoderV2;
 
-import "../interfaces/IERC20.sol";
-import "../interfaces/IWETH.sol";
-import "../interfaces/IAsset.sol";
-import "../interfaces/IAuthorizer.sol";
-import "../interfaces/IFlashLoanRecipient.sol";
-import "./ProtocolFeesCollector.sol";
-import "../interfaces/ISignaturesValidator.sol";
-import "../interfaces/ITemporarilyPausable.sol";
+import "./IERC20.sol";
+
+import "./IWETH.sol";
+import "./IAsset.sol";
+import "./IAuthorizer.sol";
+import "./IFlashLoanRecipient.sol";
+import "../contract/ProtocolFeesCollector.sol";
+import "./ISignaturesValidator.sol";
+import "./ITemporarilyPausable.sol";
 
 pragma solidity ^0.7.0;
 

@@ -14,11 +14,11 @@
 
 pragma solidity ^0.7.0;
 
-import "../interfaces/IERC20.sol";
+import "./IERC20.sol";
 
-import "./BalancerErrors.sol";
+import "../contract/BalancerErrors.sol";
 
-import "..//interfaces/IAsset.sol";
+import "./IAsset.sol";
 
 library InputHelpers {
     function ensureInputLengthMatch(uint256 a, uint256 b) internal pure {

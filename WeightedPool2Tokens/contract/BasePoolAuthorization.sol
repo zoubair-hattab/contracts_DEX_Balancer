@@ -16,9 +16,7 @@ pragma solidity ^0.7.0;
 
 import "./Authentication.sol";
 import "../interfaces/IAuthorizer.sol";
-
 import "./BasePool.sol";
-
 /**
  * @dev Base authorization layer implementation for Pools.
  *

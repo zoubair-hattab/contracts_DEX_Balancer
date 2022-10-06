@@ -17,18 +17,17 @@ pragma experimental ABIEncoderV2;
 
 import "./FixedPoint.sol";
 import "../interfaces/InputHelpers.sol";
-import "../interfaces/TemporarilyPausable.sol";
+import "./TemporarilyPausable.sol";
 import "./ERC20.sol";
 
 import "./WeightedMath.sol";
 import "./WeightedOracleMath.sol";
 import "./WeightedPool2TokensMiscData.sol";
 import "./WeightedPoolUserDataHelpers.sol";
-import "../BalancerPoolToken.sol";
-import "../BasePoolAuthorization.sol";
-import "../oracle/PoolPriceOracle.sol";
-import "../oracle/Buffer.sol";
-
+import "./BalancerPoolToken.sol";
+import "./BasePoolAuthorization.sol";
+import "./PoolPriceOracle.sol";
+import "./Buffer.sol";
 import "../interfaces/IMinimalSwapInfoPool.sol";
 import "../interfaces/IPriceOracle.sol";
 
