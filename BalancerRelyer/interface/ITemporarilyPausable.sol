@@ -13,21 +13,25 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
-
-import "../contract/Address.sol";
-import "../contract/ReentrancyGuard.sol";
-
-import "./IVault.sol";
 
 /**
- * @title IBalancerRelayer
- * @notice Allows safe multicall execution of a relayer's functions
+ * @dev Interface for the TemporarilyPausable helper.
  */
-interface IBalancerRelayer {
-    function getLibrary() external view returns (address);
+interface ITemporarilyPausable {
+    /**
+     * @dev Emitted every time the pause state changes by `_setPaused`.
+     */
+    event PausedStateChanged(bool paused);
 
-    function getVault() external view returns (IVault);
-
-    function multicall(bytes[] calldata data) external payable returns (bytes[] memory results);
+    /**
+     * @dev Returns the current paused state.
+     */
+    function getPausedState()
+        external
+        view
+        returns (
+            bool paused,
+            uint256 pauseWindowEndTime,
+            uint256 bufferPeriodEndTime
+        );
 }

@@ -18,34 +18,17 @@ pragma experimental ABIEncoderV2;
 import "./BaseRelayerLibrary.sol";
 
 import "./AaveWrapping.sol";
-import "./ERC4626Wrapping.sol";
-import "./GaugeActions.sol";
 import "./LidoWrapping.sol";
-import "./UnbuttonWrapping.sol";
 import "./VaultActions.sol";
 import "./VaultPermit.sol";
-
 
 /**
  * @title Batch Relayer Library
  * @notice This contract is not a relayer by itself and calls into it directly will fail.
  * The associated relayer can be found by calling `getEntrypoint` on this contract.
  */
-contract BatchRelayerLibrary is
-    AaveWrapping,
-    BaseRelayerLibrary,
-    ERC4626Wrapping,
-    GaugeActions,
-    LidoWrapping,
-    UnbuttonWrapping,
-    VaultActions,
-    VaultPermit
-{
-    constructor(
-        IVault vault,
-        IERC20 wstETH,
-        IBalancerMinter minter
-    ) BaseRelayerLibrary(vault) LidoWrapping(wstETH) GaugeActions(minter) {
+contract BatchRelayerLibrary is BaseRelayerLibrary, AaveWrapping, LidoWrapping, VaultActions, VaultPermit {
+    constructor(IVault vault, IERC20 wstETH) BaseRelayerLibrary(vault) LidoWrapping(wstETH) {
         // solhint-disable-previous-line no-empty-blocks
     }
 }

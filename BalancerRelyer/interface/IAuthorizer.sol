@@ -13,21 +13,14 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
 
-import "../contract/Address.sol";
-import "../contract/ReentrancyGuard.sol";
-
-import "./IVault.sol";
-
-/**
- * @title IBalancerRelayer
- * @notice Allows safe multicall execution of a relayer's functions
- */
-interface IBalancerRelayer {
-    function getLibrary() external view returns (address);
-
-    function getVault() external view returns (IVault);
-
-    function multicall(bytes[] calldata data) external payable returns (bytes[] memory results);
+interface IAuthorizer {
+    /**
+     * @dev Returns true if `account` can perform the action described by `actionId` in the contract `where`.
+     */
+    function canPerform(
+        bytes32 actionId,
+        address account,
+        address where
+    ) external view returns (bool);
 }

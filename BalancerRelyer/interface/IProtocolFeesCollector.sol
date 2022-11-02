@@ -21,7 +21,7 @@ import "./IVault.sol";
 import "./IAuthorizer.sol";
 
 interface IProtocolFeesCollector {
-      event SwapFeePercentageChanged(uint256 newSwapFeePercentage);
+    event SwapFeePercentageChanged(uint256 newSwapFeePercentage);
     event FlashLoanFeePercentageChanged(uint256 newFlashLoanFeePercentage);
 
     function withdrawCollectedFees(

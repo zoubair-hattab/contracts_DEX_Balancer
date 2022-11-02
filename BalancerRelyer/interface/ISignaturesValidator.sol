@@ -13,21 +13,18 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
-
-import "../contract/Address.sol";
-import "../contract/ReentrancyGuard.sol";
-
-import "./IVault.sol";
 
 /**
- * @title IBalancerRelayer
- * @notice Allows safe multicall execution of a relayer's functions
+ * @dev Interface for the SignatureValidator helper, used to support meta-transactions.
  */
-interface IBalancerRelayer {
-    function getLibrary() external view returns (address);
+interface ISignaturesValidator {
+    /**
+     * @dev Returns the EIP712 domain separator.
+     */
+    function getDomainSeparator() external view returns (bytes32);
 
-    function getVault() external view returns (IVault);
-
-    function multicall(bytes[] calldata data) external payable returns (bytes[] memory results);
+    /**
+     * @dev Returns the next nonce used by an address to sign messages.
+     */
+    function getNextNonce(address user) external view returns (uint256);
 }

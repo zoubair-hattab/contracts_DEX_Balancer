@@ -18,7 +18,7 @@ pragma experimental ABIEncoderV2;
 import "./Address.sol";
 import "./ReentrancyGuard.sol";
 
-import "../interfaces/IBalancerRelayer.sol";
+import "../interface/IBalancerRelayer.sol";
 
 /**
  * @title Balancer Relayer

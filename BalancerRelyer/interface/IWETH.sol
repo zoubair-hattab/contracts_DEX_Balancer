@@ -13,21 +13,15 @@
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 pragma solidity ^0.7.0;
-pragma experimental ABIEncoderV2;
 
-import "../contract/Address.sol";
-import "../contract/ReentrancyGuard.sol";
-
-import "./IVault.sol";
+import "./IERC20.sol";
 
 /**
- * @title IBalancerRelayer
- * @notice Allows safe multicall execution of a relayer's functions
+ * @dev Interface for WETH9.
+ * See https://github.com/gnosis/canonical-weth/blob/0dd1ea3e295eef916d0c6223ec63141137d22d67/contracts/WETH9.sol
  */
-interface IBalancerRelayer {
-    function getLibrary() external view returns (address);
+interface IWETH is IERC20 {
+    function deposit() external payable;
 
-    function getVault() external view returns (IVault);
-
-    function multicall(bytes[] calldata data) external payable returns (bytes[] memory results);
+    function withdraw(uint256 amount) external;
 }
